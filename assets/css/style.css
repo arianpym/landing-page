@@ -230,12 +230,18 @@ header {
 
 @media only screen and (max-width: 680px) {
   body {
-    height: 100vh;
+    overflow: auto;
+  }
+
+  header {
+    flex-direction: column-reverse;
+    margin-top: 100px;
+    height: 100%;
   }
 
   nav {
     width: 100%;
-    margin: 10px auto;
+    margin: 0;
     border: none;
   }
 
@@ -261,21 +267,30 @@ header {
     display: none;
   }
 
-  header {
-    flex-direction: column-reverse;
-    margin-top: 100px;
-    height: max-content;
-  }
-
-  header .title {
+  .title {
     padding: 40px;
+    align-items: center;
   }
 
-  header .title p {
+  .title p {
     font-size: 20px;
   }
-  header .title h1,
-  header .title h2 {
+  .title #my-love {
+    width: 300px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .title #my-love h2 {
+    text-align: right;
+  }
+  .title #my-love h2::after {
+    position: absolute;
+  }
+  .title .links {
+    margin-bottom: 80px;
+  }
+  .title h1,
+  .title h2 {
     font-size: 48px;
     line-height: 40px;
     letter-spacing: 1px;
