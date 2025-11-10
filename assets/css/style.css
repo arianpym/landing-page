@@ -93,6 +93,11 @@ nav .menu-right-side {
   gap: 25px;
 }
 
+nav .menu-right-side .icon {
+  display: none;
+  color: var(--main-color);
+}
+
 nav .menu-right-side .menu-item {
   font-size: 18px;
   position: relative;
@@ -180,11 +185,16 @@ header {
 
 @media only screen and (max-width: 680px) {
   nav {
-    margin: 5px 0;
+    margin: 0;
+    padding: 10px 0;
     border: none;
   }
-  nav .menu-right-side a:first-child {
+  nav .menu-right-side a.menu-item {
     display: none;
+  }
+
+  nav .menu-right-side a.icon {
+    display: inline-block;
   }
   nav .menu-right-side span {
     display: none;
