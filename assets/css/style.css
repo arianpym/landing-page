@@ -48,13 +48,14 @@ a {
 
 .btn:hover {
   box-shadow: 3px 3px 0 var(--main-color);
-  transform: translate(-3px, -3px);
+  /* transform: translate(-3px, -3px); */
 }
 
 .typing-effect::after {
   content: "|";
   font-weight: 100;
-  animation: typing 1.1s infinite;
+  opacity: 0;
+  animation: typing 1.1s infinite 3s;
 }
 
 @keyframes typing {
@@ -179,12 +180,24 @@ header {
 .title p {
   font-size: 24px;
   color: var(--main-color);
+  transform: translateX(-100%);
+  animation: get-ready 1s ease forwards;
 }
 
 .title h1,
 .title h2 {
   font-size: 68px;
   line-height: 58px;
+}
+
+.title h1 {
+  transform: translateX(-200%);
+  animation: get-ready 1.2s ease forwards;
+}
+
+.title h2 {
+  transform: translateX(-300%);
+  animation: get-ready 1.5s ease forwards;
 }
 
 .links {
@@ -196,8 +209,20 @@ header {
   font-size: 14px;
 }
 
+.links .cta {
+  transform: translateX(-400%);
+  animation: get-ready 1s ease forwards 1s;
+}
 .links .btn {
   font-weight: bold;
+  transform: translateX(-500%);
+  animation: get-ready 1.2s ease forwards 1.4s;
+}
+
+@keyframes get-ready {
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* POSTER */
@@ -214,6 +239,8 @@ header {
   background-color: var(--white-color);
   overflow: hidden;
   background-color: #111;
+  transform: translateX(200%);
+  animation: get-ready 1.5s ease forwards 1.2s;
 }
 
 #me {
@@ -224,6 +251,8 @@ header {
   background-size: cover;
   text-wrap: wrap;
   transition: scale 200ms;
+  transform: translateX(350%);
+  animation: get-ready 1.2s ease forwards 1.4s;
 }
 
 #me:hover {
@@ -279,24 +308,37 @@ header {
   .title p {
     font-size: 20px;
   }
+
   .title #my-love {
     width: 300px;
     text-align: center;
     margin-bottom: 25px;
   }
+
   .title #my-love h2 {
     text-align: right;
   }
+
   .title #my-love h2::after {
     position: absolute;
   }
+
   .title .links {
     margin-bottom: 80px;
   }
+
   .title h1,
   .title h2 {
     font-size: 48px;
     line-height: 48px;
     letter-spacing: 1px;
+  }
+
+  .poster {
+    animation: get-ready 1.1s ease forwards;
+  }
+
+  .poster #me {
+    animation: get-ready 1.4s ease forwards;
   }
 }
